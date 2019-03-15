@@ -1,11 +1,12 @@
 from django.db import models
 from datetime import date,datetime
 from slugger import AutoSlugField
+
 # Create your models here.
 
 class Book(models.Model):
 	title = models.CharField(max_length=100)
-	author = models.CharField(max_length=100)
+	author = models.ForeignKey('Author', on_delete=models.SET_NULL, null=True)
 	book_url = models.URLField(max_length=150, blank=True, null=True)
 	book_description = models.CharField(max_length=5000, blank=True, null=True)
 	date_added = models.DateTimeField('date added', auto_now=True)

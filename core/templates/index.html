@@ -1,6 +1,7 @@
 <h3>This is about books</h3>
  
 {% for book in books %}
-{{ book.title }} by
-{{ book.author}}
+{{ book.title }} by {{ book.author}}
+<br>
+
 {% endfor %}

@@ -10,6 +10,7 @@ class Book(models.Model):
     book_url = models.URLField(max_length=150, blank=True, null=True)
     book_description = models.CharField(max_length=5000, blank=True, null=True)
     date_added = models.DateTimeField('date added', auto_now=True)
+    category = models.ForeignKey('Category', on_delete=models.SET_NULL, null=True)
 
     #book_image = models.ImageField(upload_to=)
     #add favorited #TODO
